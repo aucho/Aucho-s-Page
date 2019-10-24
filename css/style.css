@@ -1,0 +1,236 @@
+html{
+  font-size: 20px;
+  overflow-x: hidden;
+}
+@media screen and (max-width:1500px){
+  html{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:520px){
+  html{
+    font-size: 14px;
+  }
+}
+
+.cover{
+  height: 75px;
+  width: 100%;
+  background-color: #f5f5f5;
+  z-index: 100;
+  position: absolute;
+}
+header{
+  top: 0; 
+  left: 0;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  height: 70px;
+  box-shadow: 0 0 3px #999;
+  opacity: 0;
+  z-index: 1;
+}
+.header-container{
+  max-width: 1440px;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+.header-container .website-name{
+  margin-left: 40px;
+  line-height: 40px;
+  color: #42b983;
+  font-size: 32px;
+  font-weight: bold;
+  float: left;
+}
+.header-container .catalog{
+  padding-right: 40px;
+  float: right;
+}
+
+.header-container li{
+  height: inherit;
+  display: inline-block;
+  line-height: 40px;
+  margin: 0 1em;
+  cursor: pointer;
+  font-family: 'Century Gothic','TeXGyreAdventor',"STHeiti",sans-serif;
+  font-weight: lighter;
+  color: #333;
+}
+@media screen and (max-width:1500px){
+  .header-container li{
+    font-weight: normal;
+  }
+}
+.header-container li:hover{
+  text-shadow: 0 0 5px #999;
+}
+.header-container .active{
+  text-shadow: 0 0 5px #999;
+}
+
+.header-container .text-bottom-line{
+  width: 2em;
+  height: 0.3em;
+  background-color: #42b983;
+  margin-left: 23.5px;
+}
+
+/* 标签图案 仅宽度小于520出现 */
+.header-container .menu-icon{
+  z-index: 3;
+  height: 28px;
+  width: 28px;
+  padding: 6px;
+  margin-right: 20px;
+  float: right;
+  /* background-color: #123; */
+  position: relative;
+  display: none;
+  cursor: pointer;
+}
+.menu-icon span{
+  position: absolute;
+  width: 2rem;
+  height: .2rem;
+  background-color: #42b983;
+  display: block;
+}
+.menu-icon span:nth-child(1){
+  top:30%;
+}
+.menu-icon span:nth-child(2){
+  top:50%;
+}
+.menu-icon span:nth-child(3){
+  top:70%;
+}
+
+.menu-enter span:nth-child(1){
+  animation: rotation1 1s ease;
+  -webkit-animation: rotation1 1s ease;
+}
+.menu-enter span:nth-child(2){
+  animation: rotation2 1s ease;
+  -webkit-animation: rotation2 1s ease;
+}
+.menu-enter span:nth-child(3){
+  animation: rotation3 1s ease;
+  -webkit-animation: rotation3 1s ease;
+}
+/* .menu-enter span:nth-child(n){
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+} */
+
+@keyframes rotation1{
+  0%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-top: 8.4px;
+  }
+  100%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+@keyframes rotation2{
+  0%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  50%{
+    transform-origin: 50% 50%;;
+    -webkit-transform-origin: 50% 50%;;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  100%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+@keyframes rotation3{
+  0%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-top: -8.4px;
+  }
+  100%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+
+@media screen and (max-width: 520px){
+  .header-container .menu-icon{
+    display: block;
+  }
+  .catalog{
+    display: none;
+    opacity: 0;
+  }
+  .header-container .catalog{
+    padding: 0;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .catalog li{
+    margin: 0;
+    width: 100%;
+    color: #42b983;
+    display: list-item;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 4rem;
+    background-color: #fff;
+    border-bottom: 1px solid #efefef;
+  }
+  .catalog li:active, .catalog li:hover{
+    background-color: #ddd;
+  }
+  .text-bottom-line{
+    display: none;
+  }
+  .catdown{
+    animation:listdown 1s linear 0s;
+    display: block;
+    /* animation-play-state: paused;
+    -webkit-animation-play-state: paused; */
+  }
+}
+
+@keyframes listdown{
+  0%{
+    margin-top: -100px;
+    opacity: 0;
+  }
+  50%{
+    margin-top: 17px;
+    opacity: 1;
+  }
+  100%{
+    margin-top: -100px;
+    opacity: 0; 
+  }
+}
+
+
+.beian{
+  width: 100%;
+  text-align: center;
+  margin-top:4rem;
+  color: #999;
+  font-size: 0.8rem;
+}

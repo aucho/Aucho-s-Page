@@ -1,0 +1,39 @@
+{
+  "name": "index-pack",
+  "version": "1.0.1",
+  "description": "aucho's page",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aucho/Aucho-s-Page.git"
+  },
+  "keywords": [
+    "aucho"
+  ],
+  "author": "aucho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aucho/Aucho-s-Page/issues"
+  },
+  "homepage": "https://github.com/aucho/Aucho-s-Page#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "url-loader": "^2.0.1",
+    "webpack": "4.35.3"
+  }
+}

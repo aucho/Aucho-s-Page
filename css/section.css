@@ -1,0 +1,420 @@
+.section1{
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.title{
+  position: absolute;
+  top:50%;
+  width: 100%;
+  transform: translateY(-70%);
+  text-align: center;
+  color: #42b983;
+}
+h2.my-page{
+ font-size: 4rem;
+ line-height: 4rem;
+ font-family: 'Times New Roman', Times, serif;
+}
+.p1 {
+  height: 1.4rem;
+  width: 16rem;
+  color: #aaa;
+  font-family: 'Century Gothic','TeXGyreAdventor',"STHeiti",sans-serif;
+  font-size: 1.4rem;
+  margin: 0 auto;
+  text-align: left;
+  /* opacity: 0; */
+}
+
+.swapout {
+  animation: swapout 0.5s ease 0s 1;
+  opacity: 0;
+}
+
+@keyframes swapout {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.to-next-page{
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  height: 10%;
+  cursor: pointer;
+}
+.arrow{
+  position: inherit;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top : 50%;
+  margin-left: -10px;
+  /* background-color: #123; */
+  border-right: 3px solid #42b983;
+  border-bottom: 3px solid #42b983;
+  animation: arrow 2s ease-out 0s infinite;
+  -webkit-animation: arrow 2s ease-out 0s infinite;
+}
+
+@keyframes arrow{
+  0%{
+    transform: rotate(45deg);
+    opacity: 0.2;
+  }
+  50%{
+    margin-top: -50px;
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  100%{
+    transform: rotate(45deg);
+    opacity: 0.2;
+  }
+}
+
+/* -------------------section2------------------ */
+.list-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(0deg,#42b983 40%,#f5f5f5 40%);
+  overflow: hidden;
+}
+#section2 ul{
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+.li-item{
+  transition: 0.2s ease;
+  position: absolute;
+  cursor: pointer;
+  color: #42b983;
+}
+.li-name{
+  line-height: 8rem;
+  transition: 0.5s ease;
+  font-family: impact,fantasy,serif;
+  text-shadow: 0.5rem 0.5rem 0.5rem  #666;
+}
+.li-name:hover{
+  transform: scale(1.2);
+}
+.li-item a{
+  color: inherit;
+}
+.li-item:nth-child(1){
+  font-size: 5rem;
+  top: 15%;
+  right: 25%;
+}
+.li-item:nth-child(2){
+  font-size: 7rem;
+  top: 30%;
+  left: 15%;
+}
+
+.li-item:nth-child(3){
+  font-size: 4rem;
+  top:45%;
+  left: 45%;
+}
+.li-item:nth-child(4){
+  font-size: 6rem;
+  top: 60%;
+  right: 10%;
+  color: #f5f5f5;
+}
+.li-item:nth-child(5){
+  font-size: 5rem;
+  top: 75%;
+  left: 20%;
+  color: #f5f5f5;
+}
+
+.archive-list{
+  transition: 2s ease;
+  left: 0;
+  top: 0;
+  /* background-color:rgb(12,99,44,0.2); */
+}
+.description{
+  font-size: 1.2rem;
+  font-family: '行体','Century Gothic','TeXGyreAdventor',"STHeiti",sans-serif;
+  line-height: 1.3rem;
+  text-shadow: none;
+  margin: 0.1rem 0 0 0.3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  transition: 0.5s ease;
+}
+.li-item:hover .description,.li-item:active .description{
+  opacity: 1;
+  width: 10rem;
+}
+
+/* 贪吃蛇 */
+.snake{
+  padding-top: 70px;
+  position: absolute;
+  transition: 2s ease;
+  top:50%;
+  left: 150%;
+  transform: translate(-50%,-50%);
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  /* margin-right: -100%; */
+}
+.snake #scene{
+  background: linear-gradient(#123,#789);
+  /* color: rgb(132, 32, 32); */
+  /* border: 1px solid #999 */
+  /* box-shadow: 0 0 3px ; */
+}
+.snake a{
+  position: absolute;
+  top: 85px;
+  right: 10px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+.snake span{
+  color: #fff;
+  line-height: 1.2rem;
+  font-size: 1rem;
+}
+.snake button{
+  margin: 30px auto;
+  display: block;
+  width:80px;
+  height: 30px;
+  font-size: 1rem;
+  background:none;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+/*---------- 俄罗斯方块 */
+.tetris{
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%,-50%);
+  transition: 2s ease;
+  padding-top:70px;
+}
+
+#t_table{
+  text-align: center;
+  background: #e3e3ee;
+  box-shadow: 0 0 3px;
+}
+
+.t_block{
+  width: 25px;
+  height: 25px;
+  background: #fff;
+}
+
+.tetris button{
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);;
+}
+.tetris span{
+  line-height: 30px;
+}
+.tetris a{
+  position: absolute;
+  right: -20px;
+  top: 75px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.tetris .intro{
+  width: 10rem;
+  position: absolute;
+  right: -12rem;
+  bottom: 5rem;
+  color: #fff;
+  line-height: 1.2rem;
+}
+
+/* 画板 */
+.sketchpad{
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%,-50%);
+  transition: 2s ease;
+  padding-top:70px;
+}
+.sketchpad canvas{
+  background-color: #fff;
+  border: 18px solid #444; 
+  box-shadow: 0 0 12px 0;
+  border-radius: 25px;
+  cursor: crosshair;
+}
+.sketchpad button{
+  margin: 10px 30px;
+  font-size: 22px
+}
+.icon {
+    width: 2em; height: 2em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    margin: 1rem;
+}
+.sketchpad a{
+  position: absolute;
+  right: -20px;
+  top: 75px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.slideOut{
+  opacity: 0;
+  left: 150%;
+}
+.slideIn{
+  opacity: 1;
+  left: 50%;
+}
+
+
+@media screen and (max-width:520px){
+  .tetris{
+    display: none;
+  }
+  .snake{
+    display: none;
+  }
+}
+/* ---------------section3------------- */
+#section3{
+  background: linear-gradient(#42b983 40% , #fff 40%);
+}
+.section3-container{
+  position: relative;
+  widows: 100%;
+  height: 100%;
+}
+
+.content{
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+
+.content .avatar{
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: #f5f5f5;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.avatar img{
+  width: inherit;
+  height: inherit;
+}
+
+.content .info{
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.info a{
+  font-family: 'Century Gothic','TeXGyreAdventor',"STHeiti",sans-serif;
+  margin: 0 20px;
+}
+
+.feedback{
+  z-index: 1;
+  background-color: #fff;
+}
+.feedback p{
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+.feedback input{
+  border: none;
+  outline: none;
+  width: 18rem;
+  border-bottom: 1px solid #666;
+  font-size: 1rem;
+  font-family: 'Century Gothic','TeXGyreAdventor',"STHeiti",sans-serif;
+  color: #999;
+  transition: 0.5s ease;
+}
+.feedback button{
+  visibility: hidden;
+  margin: 0.2rem 0 0 ;
+  font-size: 1rem;
+  width: 80px;
+  height: 30px;
+  color: #42b983;
+  background-color: #fff;
+  border: 1px solid #42b983;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.feedback-content{
+  margin-top: 4rem;
+}
+.feedback-email{
+  visibility: hidden;
+}
+.alert{
+  height: 1rem;
+  margin-top: .5rem;
+  font-size: .7rem;
+  color: #42b983;
+}
+
+
+/* .slideRight{
+  margin-left: -100%;
+}  */
+
+/* @keyframes slideUp{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    margin: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(200%);
+  }
+} */

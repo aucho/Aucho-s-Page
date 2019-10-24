@@ -1,0 +1,9 @@
+@font-face{
+  font-family: 'Century Gothic';
+  src: url('../font/CenturyGothic1.ttf');
+  src: local('Century Gothic');
+}
+@font-face{
+  font-family: impact;
+  src: url('../font/impact.ttf');
+}
